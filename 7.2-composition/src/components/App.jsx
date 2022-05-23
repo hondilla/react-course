@@ -7,7 +7,7 @@ import TableHead from './Table/TableHead';
 const WithProtected = Component => props => {
   const { isProtected, ...properties } = props;
   return !isProtected ? <Component {...properties} /> 
-    : <div>El componente está protegido...</div>      
+    : <span>El componente está protegido...</span>      
 }
 
 const ProtectedTable = WithProtected(Table);
