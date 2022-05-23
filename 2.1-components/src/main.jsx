@@ -1,9 +1,13 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import Table from './components/Table/Table'
+'use strict';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Table />
-  </StrictMode>
-);
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import Table from './components/Table/Table';
+
+ReactDOM
+  .createRoot(document.getElementById('root'))
+  .render(
+    <StrictMode>
+      <Table />
+    </StrictMode>
+  );
