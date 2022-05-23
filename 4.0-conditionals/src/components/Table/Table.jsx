@@ -11,9 +11,14 @@ const Table = ({ title, rows }) => {
   const NoContentInTable = () => 
     <span>La tabla está vacia.</span>;
 
+  const checkEmptyTable = () => {
+    if(rows.length) return <MainTable />;
+    return <NoContentInTable />;
+  }
+
   return <>
     <h1>{ title }</h1>
-    { rows.length ? <MainTable /> : <NoContentInTable /> }
+    { checkEmptyTable() }
   </>;
 }
 

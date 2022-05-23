@@ -1,6 +1,5 @@
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
-import '../../styles.scss';
 
 const Table = ({ title, rows, columns }) =>
   <>

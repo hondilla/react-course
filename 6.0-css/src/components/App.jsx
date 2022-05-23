@@ -1,4 +1,5 @@
 import Table from './Table/Table';
+import '../styles.scss';
 
 const App = () => {
   const columns = [ 'Id', 'Nombre' ];
