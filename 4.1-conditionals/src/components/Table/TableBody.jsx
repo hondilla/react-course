@@ -1,8 +1,8 @@
 import TableRow from "./TableRow";
 
-const TableBody = () => 
+const TableBody = ({ rows }) => 
   <tbody>
-    <TableRow />
+    { rows.map(row => <TableRow key={ row.id } row={ row } />) }
   </tbody>;
 
 export default TableBody;

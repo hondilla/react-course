@@ -1,7 +1,6 @@
-const TableColumns = () => 
+const TableColumns = ({ columns }) => 
   <tr>
-    <th>Título columna</th>
-    <th>Título columna</th>
+    { columns.map(column => <th key={ column }>{ column }</th>) }
   </tr>;
 
 export default TableColumns;

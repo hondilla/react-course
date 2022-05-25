@@ -1,7 +1,7 @@
-const TableRow = () => 
+const TableRow = ({ row }) => 
   <tr>
-    <td>Valor de Celda</td>
-    <td>Valor de Celda</td>
+    <td>{ row.id }</td>
+    <td>{ row.name }</td>
   </tr>;
 
 export default TableRow;

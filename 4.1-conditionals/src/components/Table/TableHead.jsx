@@ -1,8 +1,6 @@
-import TableColumns from "./TableColumns";
-
-const TableHead = () => 
+const TableHead = ({ children }) => 
   <thead>
-    <TableColumns />
+    { children }
   </thead>;
 
 export default TableHead;
