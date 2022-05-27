@@ -1,0 +1,20 @@
+.flag-img {
+  width: 34px;
+  height: 22px;
+  border: 1px solid #ccc;
+}
+
+.form-check {
+  padding-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.table-sm {
+  font-size: 0.875rem;
+}
+
+th,
+.form-check-label {
+  text-transform: capitalize;
+}
