@@ -1,14 +1,20 @@
 import { useState } from "react"
 
-const TableRowSearcher = ({ setFilter }) => {
-    const [search, setSearch] = useState('');
+const TableRowSearcher = ({ setSearch }) => {
+    const [input, setInput] = useState('');
 
     const onChangeHandler = ({ target }) => {
         setSearch(target.value);
-        setFilter(target.value);
+        setInput(target.value);
     }
 
-    return <input type="text" className="form-control mb-4" placeholder="Busca un país" onChange={ onChangeHandler } value={ search } />
+    return <input 
+        type="text" 
+        className="form-control mb-4" 
+        placeholder="Busca un país" 
+        onChange={ onChangeHandler }
+        value={ input }
+    />
 }
 
 export default TableRowSearcher;

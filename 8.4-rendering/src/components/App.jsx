@@ -21,12 +21,12 @@ const App = () => {
     visibleColumns, 
     excludedColumns
   ] = useColumns(initialColumns);
-  const [filteredRows, setFilter] = useRows(countries, excludedColumns);
+  const [filteredRows, setSearch] = useRows(countries, excludedColumns);
 
   return <>
     <Header title="React Course" />
     <div className="container">
-      <TableRowSearcher setFilter={ setFilter } />
+      <TableRowSearcher setSearch={ setSearch } />
       <TableColumnsSelector columns={ columns } setColumns={ setColumns } />
       { !isLoading ? <Table>
         <TableHead>

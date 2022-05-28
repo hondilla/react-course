@@ -5,14 +5,14 @@ const removeProperties = (object, ...keys) =>
 const removeProperty = (propKey, { [propKey]: _propValue, ...rest }) => rest;
 
 export const useRows = (initialRows, columns) => {
-  const [filter, setFilter] = useState('');
+  const [search, setSearch] = useState('');
 
   const filteredRows = initialRows.filter(({ name }) => 
-    name.toLowerCase().includes(filter.toLowerCase())
+    name.toLowerCase().includes(search.toLowerCase())
   ).reduce((acc, row) => {
     acc.push(removeProperties(row, columns));
     return acc;
   }, []);
 
-  return [filteredRows, setFilter];
+  return [filteredRows, setSearch];
 }
