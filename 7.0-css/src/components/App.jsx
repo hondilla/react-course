@@ -2,15 +2,18 @@ import Table from './Table/Table';
 import TableBody from './Table/TableBody';
 import TableColumns from './Table/TableColumns';
 import TableHead from './Table/TableHead';
+import countries from '../countries.json';
 import '../styles.scss';
 
 const App = () => {
   const columns = [ 'Id', 'Nombre' ];
-  const rows = [
-    {"id": 1, "name": "España"}, 
-    {"id": 2, "name": "Andorra"},
-    {"id": 3, "name": "Portugal"}
-  ];
+  const rows = () => countries.reduce((acc, country) => {
+    acc.push({
+      "id": country.cca2,
+      "name": country.name.common
+    })
+    return acc;
+  }, []);
 
   return <>
     <h1>React Course</h1>
@@ -18,7 +21,7 @@ const App = () => {
       <TableHead>
         <TableColumns columns={ columns } />
       </TableHead>
-      <TableBody rows={ rows } />
+      <TableBody rows={ rows() } />
     </Table> 
   </>;
 }

@@ -1,9 +1,6 @@
-const TableColumns = ({ columns }) => {
-  const visibleColumns = columns.filter(({isVisible}) => isVisible === true);
-
-  return <tr>
-    { visibleColumns.map(({ name }) => <th key={ name }>{ name }</th>) }
+const TableColumns = ({ columns }) =>
+  <tr>
+    { columns.map(column => <th key={ column }>{ column }</th>) }
   </tr>;
-}
 
 export default TableColumns;

@@ -1,7 +1,6 @@
 const TableRow = ({ row }) => 
   <tr>
-    <td>{ row.id }</td>
-    <td>{ row.name }</td>
+    { Object.keys(row).map((key) => <td key={ key }>{ row[key] }</td>) }
   </tr>;
 
 export default TableRow;

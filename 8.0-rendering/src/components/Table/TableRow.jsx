@@ -1,9 +1,6 @@
-const TableRow = ({ row, columns }) => {
-  const visibleColumns = columns.filter(({isVisible}) => isVisible === true);
-  
-  return <tr>
-    { visibleColumns.map(({ name, alias }) => <td key={ name }>{ row[alias] }</td>) }
+const TableRow = ({ row }) =>
+  <tr>
+    { Object.keys(row).map((key) => <td key={ key }>{ row[key] }</td>) }
   </tr>;
-}
 
 export default TableRow;
