@@ -1,7 +1,7 @@
 const TableColumnsSelector = ({ columns, setColumns }) => {
   const onChangeHandler = ({ target }) => {
     setColumns(state => {
-      const newState = [ ...state ];
+      const newState = structuredClone(state);
       const column = newState.find(({ alias }) => alias === target.name);
       column.isVisible = target.checked;
       return newState;

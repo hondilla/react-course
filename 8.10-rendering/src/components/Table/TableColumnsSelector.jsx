@@ -1,14 +1,20 @@
-const TableColumnsSelector = ({ columns, setColumns }) => {
+import { useContext } from "react";
+import { StateContext } from "../../context/StateProvider";
+
+const TableColumnsSelector = () => {
+  const { state, dispatch } = useContext(StateContext);
+
   const onChangeHandler = ({ target }) => {
-    setColumns(state => {
-      const newState = structuredClone(state);
-      const column = newState.find(({ alias }) => alias === target.name);
-      column.isVisible = target.checked;
-      return newState;
+    dispatch({
+      type: 'SET_COLUMN_VISIBILITY',
+      payload: {
+        name: target.name,
+        checked: target.checked
+      }
     });
   }
   return <div className="d-flex flex-row justify-content-start align-items-start flex-wrap pb-4">
-    { columns.map(({ name, alias, isVisible }) =>
+    { state.columns.map(({ name, alias, isVisible }) =>
       alias !== 'id' && <label key={ name } className="form-check">
         <input
           className="form-check-input"

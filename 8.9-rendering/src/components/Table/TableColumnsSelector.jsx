@@ -1,10 +1,11 @@
-const TableColumnsSelector = ({ columns, setColumns }) => {
+const TableColumnsSelector = ({ columns, dispatch }) => {
   const onChangeHandler = ({ target }) => {
-    setColumns(state => {
-      const newState = structuredClone(state);
-      const column = newState.find(({ alias }) => alias === target.name);
-      column.isVisible = target.checked;
-      return newState;
+    dispatch({
+      type: 'SET_VISIBILITY',
+      payload: {
+        name: target.name,
+        checked: target.checked
+      }
     });
   }
   return <div className="d-flex flex-row justify-content-start align-items-start flex-wrap pb-4">
