@@ -34,12 +34,9 @@ const columnsReducer = () => (acc, {alias}) => {
 }
 
 const rowsFilter = (countries, columns) => {
-  return countries.reduce((acc, row) => {
-    acc.push(removeProperties(row, columns));
+  return structuredClone(countries).reduce((acc, row) => {
+    columns.forEach((key) => delete row[key]);
+    acc.push(row);
     return acc;
   }, []);
 }
-
-const removeProperties = (object, ...keys) =>
-  keys.length ? removeProperties(removeProperty(keys.pop(), object), ...keys) : object;
-const removeProperty = (propKey, { [propKey]: _propValue, ...rest }) => rest;
