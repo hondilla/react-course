@@ -5,9 +5,15 @@ const fieldType = value => {
   return value ?? '-';
 }
 
-const TableRow = ({ row }) => 
-  <tr>
+const TableRow = ({ row, setModalState }) => {
+  const onClickHandler = () => {
+    setModalState({isOpen: true, country: row})
+  }
+
+  return <tr onClick={onClickHandler}>
     { Object.keys(row).map((key) => <td key={ key }>{ fieldType(row[key]) }</td>) }
   </tr>;
+}
+  
 
 export default TableRow;

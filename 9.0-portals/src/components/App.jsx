@@ -8,6 +8,8 @@ import TableRowSearcher from './Table/TableRowSearcher';
 import { useColumns } from "../hooks/useColumns";
 import { useRows } from "../hooks/useRows";
 import { useCountries } from '../hooks/useCountries';
+import TableDetailsModal from './Table/TableDetailsModal';
+import { useState } from 'react';
 
 const App = () => {
   const initialColumns = [
@@ -31,6 +33,13 @@ const App = () => {
   ] = useColumns(initialColumns);
   const filteredRows = useRows(countries, excludedColumns);
 
+  const [modalState, setModalState] = useState({isOpen: false, country: {}});
+
+  const Modal = () => modalState.isOpen && <TableDetailsModal
+    modalState={ modalState }
+    setModalState={ setModalState }
+  />;
+
   return <>
     <Header title="React Course" />
     <div className="container">
@@ -40,8 +49,9 @@ const App = () => {
         <TableHead>
           <TableColumns columns={ visibleColumns } />
         </TableHead>
-        <TableBody rows={ filteredRows } />
+        <TableBody rows={ filteredRows } setModalState={ setModalState }/>
       </Table> : <span>Cargando...</span> }
+      <Modal />
     </div>
   </>
 }

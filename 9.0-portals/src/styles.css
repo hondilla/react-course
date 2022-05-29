@@ -18,3 +18,8 @@ th,
 .form-check-label {
   text-transform: capitalize;
 }
+
+tr:hover {
+  background-color: orange;
+  cursor: pointer;
+}

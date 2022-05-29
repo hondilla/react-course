@@ -39,7 +39,7 @@ export const useCountries = () => {
               "languages": parseField(country.languages ?? {}),
               "region": country.region,
               "subregion": country.subregion,
-              "population": country.population,
+              "population": country.population
             });
             return acc;
           }, []);
