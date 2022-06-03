@@ -17,22 +17,19 @@ Esto también se aplica a **React**, es por eso por lo que **un componente solo 
 | No dispone de ningún método. | Se pueden crear tantos métodos como sea necesario. | 
 | Es una representación de objeto de un nodo **DOM**. | Encapsula un árbol **DOM**. | 
 | Son inmutables, una vez creados no pueden ser modificados. | El estado de un componente es mutable. |
-| Puede ser creado usando `React.createElement` con el parámetro type. | Son creados mediante la función `render`. |
-| No es posible utilizar **React Hooks** ya que los elementos son inmutables. | Es posible el uso de **Hooks**. |
+| Puede ser creado usando `React.createElement` mediante el primer parámetro, `type`. | Son creados mediante la función `render` de manera transparente en el `return` del componente. |
+| No es posible utilizar **Hooks** ya que los elementos son inmutables. | Es posible el uso de **Hooks**. |
 | Son ligeros, sin estado y más rápido. | Son comparativamente más lentos que los elementos. |
-
 <br />
 
 ```jsx reference 
 https://github.com/hondilla/react-course/blob/edge/2.0-components/src/main.jsx
 ```
-
 <br />
 
 ```jsx reference 
 https://github.com/hondilla/react-course/blob/edge/2.0-components/src/components/Table/Table.jsx
 ```
-
 <br />
 
 Si el fichero del módulo es renombrado a ***index.jsx***, el componente es importado por defecto solo con especificar el nombre del directorio.
@@ -40,6 +37,17 @@ Si el fichero del módulo es renombrado a ***index.jsx***, el componente es imp
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L3-L3
 ```
+<br />
+
+
+:::tip
+*Es indiferente utilizar la extensión **.js** o **.jsx**, para mantener un orden se suele utilizar **.js** cuando se utiliza **Vanilla JS** y **.jsx** cuando contiene código específico de **React**.*
+:::
+<br />
+
+:::info Docs
+* [Componentes y propiedades - React](https://es.reactjs.org/docs/components-and-props.html)
+:::
 
 ## Modo Estricto
 
@@ -60,7 +68,6 @@ https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L
 *Es posible extraer `StrictMode` directamente de `react`.
 Cuando un componente no tiene hijos pueden utilizarse con la etiqueta de cierre a la derecha.*
 :::
-<br />
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L1-L1
@@ -68,20 +75,16 @@ https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L
 <br />
 
 :::tip
-*No confundir con `use strict` de **JavaScript**, el cual esta activado debido al uso de módulos.*
+*No confundir con `use strict` de **JavaScript**, el cual se encuentra activo debido al uso de módulos.*
 :::
 
 :::info Docs
 * [Modo estricto - JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Strict_mode)
 :::
 
-:::info Docs
-* [Componentes y propiedades - React](https://es.reactjs.org/docs/components-and-props.html)
-:::
-
 ## Composición de Componentes
 
-La composición en React es un patrón de desarrollo basado en el modelo de componentes, en el que se construyen componentes a partir de otros componentes más pequeños, para ensamblar una unidad cohesiva más grande.
+La composición en React es un patrón de desarrollo basado en el modelo de componentes ***(modularidad, reusabilidad, reparto de responsabilidades, ...)***, en el que se construyen componentes a partir de otros componentes más pequeños, para ensamblar una unidad cohesiva más grande.
 
 Utilizar la composición facilita la reutilización de componentes dentro de la aplicación haciéndolos más fáciles de mantener y reduciendo su complejidad.
 
@@ -160,9 +163,9 @@ https://github.com/hondilla/react-course/blob/edge/2.2-components/src/components
 *Es muy importante diseñar bien nuestros componentes, para reducir el acoplamiento y aumentar la cohesión.*
 :::
 
-## Fragments
+## Fragmentos
 
-Un patrón común en **React** es que un componente devuelva múltiples elementos. Los Fragmentos te permiten agrupar una lista de hijos sin agregar nodos extra al DOM.
+Un patrón común en **React** es que un componente retorne múltiples elementos o componentes. Los **Fragments** te permiten agrupar una lista de hijos sin agregar nodos extra al DOM.
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/2.3-components/src/components/Table/Table.jsx
