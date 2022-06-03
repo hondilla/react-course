@@ -2,7 +2,7 @@ name: docusaurus
 on: [push]
 
 env:
-  USE_SSH: true
+  GIT_USER: hondilla
 
 jobs:
   deploy:
