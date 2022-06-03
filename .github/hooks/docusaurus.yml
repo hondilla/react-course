@@ -1,0 +1,14 @@
+name: docusaurus
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: redkubes/docusaurus-deploy-action@master
+        with:
+          source-folder: website
+          git-user: hondilla
+          git-password: ${{ secrets.TOKEN }}
+          deployment-branch: gh-pages
