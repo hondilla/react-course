@@ -12,6 +12,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'hondilla',
   projectName: 'react-course',
+  trailingSlash: true,
   i18n: {
     defaultLocale: 'es',
     locales: ['es'],

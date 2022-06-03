@@ -5,10 +5,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: redkubes/docusaurus-deploy-action@master
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          source-folder: website
-          git-user: hondilla
-          git-password: ${{ secrets.TOKEN }}
-          deployment-branch: gh-pages
+          node-version: 18
+      - name: Login GitHub
+        run: |
+          git config --global user.email "hondilla@users.noreply.github.com"
+          git config --global user.name "Christian Bohollo Sáez"
+          echo "machine github.com login hondilla password ${{ secrets.TOKEN }}" > ~/.netrc
+      - name: Install Deps
+        working-directory: ./website
+        run:  |
+          npm ci
+          npm run deploy
+      
