@@ -1,6 +1,9 @@
 name: docusaurus
 on: [push]
 
+env:
+  USE_SSH: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
