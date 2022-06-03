@@ -11,6 +11,18 @@ Los componentes permiten separar la interfaz de usuario en piezas independientes
 
 Esto también se aplica a **React**, es por eso por lo que **un componente solo puede devolver un elemento o componente**.
 
+| Elemento | Componente |
+|:-:|:-:|
+| Siempre es devuelto por un componente. | Retorna un elemento u otro componente. |
+| No dispone de ningún método. | Se pueden crear tantos métodos como sea necesario. | 
+| Es una representación de objeto de un nodo **DOM**. | Encapsula un árbol **DOM**. | 
+| Son inmutables, una vez creados no pueden ser modificados. | El estado de un componente es mutable. |
+| Puede ser creado usando `React.createElement` con el parámetro type. | Son creados mediante la función `render`. |
+| No es posible utilizar **React Hooks** ya que los elementos son inmutables. | Es posible el uso de **Hooks**. |
+| Son ligeros, sin estado y más rápido. | Son comparativamente más lentos que los elementos. |
+
+<br />
+
 ```jsx reference 
 https://github.com/hondilla/react-course/blob/edge/2.0-components/src/main.jsx
 ```
@@ -26,27 +38,42 @@ https://github.com/hondilla/react-course/blob/edge/2.0-components/src/components
 Si el fichero del módulo es renombrado a ***index.jsx***, el componente es importado por defecto solo con especificar el nombre del directorio.
 
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L5-L5
+https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L3-L3
 ```
 
 ## Modo Estricto
 
-`React.StrictMode` es un componente de **React** que no es renderizado en el **HTML**, nos permite envolver otros componentes para ayudar a crear componentes siguiendo las mejores prácticas, verificar que no se utilizan funciones deprecadas, efectos secundarios no deseados.
+`React.StrictMode` es un componente de **React** que no es renderizado en el **HTML**, permite envolver a otros componentes para ayudar a crearlos siguiendo las mejores prácticas.
+
+* Identifica con ciclos de vida inseguros.
+* Avisos sobre el uso de la API obsoleta.
+* Detección de efectos secundarios inesperados.
+* Detección de efectos inseguros.
+
+<br />
 
 :::info Docs
 * [Modo estricto - React](https://es.reactjs.org/docs/strict-mode.html)
 :::
 
 :::tip
-*Es posible extraer `StrictMode` directamente de `‘react’`.
+*Es posible extraer `StrictMode` directamente de `react`.
 Cuando un componente no tiene hijos pueden utilizarse con la etiqueta de cierre a la derecha.*
 :::
+<br />
 
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L3-L3
+https://github.com/hondilla/react-course/blob/edge/2.1-components/src/main.jsx#L1-L1
 ```
-
 <br />
+
+:::tip
+*No confundir con `use strict` de **JavaScript**, el cual esta activado debido al uso de módulos.*
+:::
+
+:::info Docs
+* [Modo estricto - JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Strict_mode)
+:::
 
 :::info Docs
 * [Componentes y propiedades - React](https://es.reactjs.org/docs/components-and-props.html)
