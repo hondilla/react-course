@@ -278,13 +278,8 @@ class App {
     + columns
     + rows
 }
-class Table {
-    + columns
-    + rows
-}
-class TableHead {
-    + columns
-}
+class Table {}
+class TableHead {}
 class TableColumns {
     + columns
 }
