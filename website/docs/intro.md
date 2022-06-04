@@ -3,6 +3,8 @@ sidebar_position: 1
 slug: '/'
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Introducción
 
 **React** es una biblioteca **JavaScript** altamente **eficiente** y **declarativa** que se utiliza para crear interfaces de usuario interactivas.
@@ -67,7 +69,7 @@ El término **Virtual DOM** es normalmente asociado con elementos de **React**�
 :::
 
 <p align="center">
-  <img alt="Virtual DOM" src="img/react/virtual-dom.png" />
+  <img alt="Virtual DOM" src={useBaseUrl('/img/react/virtual-dom.png')} />
 </p>
 
 :::info Docs
