@@ -43,7 +43,7 @@ Estas acciones se producen mediante eventos, manejarlos es muy similar a trabaja
 :::
 
 ## useState
-Al utilizar la función `useState` esta retorna un array con dos valores `columns`  y `setColumns`, `useState` recibe como parámetro un `array` con las distintas **columnas**. 
+Al utilizar la función `useState` esta retorna un array con dos valores `columns` y `setColumns`, `useState` recibe como parámetro un `array` con las distintas **columnas**. 
 
 Ahora las `columns` tiene más propiedades, `name` para el nombre de la **columna**, `alias` para asociar la columna concreta con el valor de especificado en la **fila**, y una propiedad `isVisible` que se va a encargar de mostrar u ocultar la columna.
 

@@ -21,7 +21,7 @@ Una segunda renderización u otras posteriores, se conoce como **re-rendering**,
 Un **hook** ***(gancho)*** es una función de **JavaScript** que permite **“engancharse”** al estado, al ciclo de vida de un componente u otras características de **React**. Al utilizar los **hooks** hay que seguir dos reglas básicas.
 
 - Deben ser llamados en el nivel superior del componente. Nunca deben llamarse dentro de bucles, condicionales o funciones anidadas, ya que la renderización de un componente debe de ser predecible.
-- Deben de llamarse desde un componentes o desde otros hooks personalizados.
+- Deben de llamarse desde un componente o desde otros hooks personalizados.
 
 :::tip
 *Por convención todos los **hooks** deben empezar con el prefijo **use**.*

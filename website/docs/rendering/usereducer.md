@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 `useReducer` retorna un `array` con dos elementos, de forma similar a `useState`, el primer elemento es el estado actual, el segundo una función `dispatch`.
 
-La función `dispatch` se encarga de disparar acciones lque le indican a la función reductora como se va a modificar el estado.
+La función `dispatch` se encarga de disparar acciones que le indican a la función reductora como se va a modificar el estado.
 
 <div align="center">
   <img alt="Virtual DOM" src={useBaseUrl('/img/react/redux.png')} />

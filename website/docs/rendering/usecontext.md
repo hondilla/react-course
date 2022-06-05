@@ -7,7 +7,7 @@ slug: '/context'
 
 El uso de **Context** permite definir un contexto de datos al cual puede acceder todos aquellos componentes que se encuentren dentro de dicho contexto sin necesidad de utilizar las `props`.
 
-Su uso solo se recomienda en casos muy especiales donde haya datos realmente globales, como por ejemplo, datos de un usuario autenticado, configuración del **theme** de la aplicación o gestión de idiomas.
+Su uso solo se recomienda en casos muy especiales donde haya datos realmente globales, como, por ejemplo, datos de un usuario autenticado, configuración del **theme** de la aplicación o gestión de idiomas.
 
 Otro caso muy común sería en la creación de librerías.
 

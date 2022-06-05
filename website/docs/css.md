@@ -12,7 +12,7 @@ Al utilizar **React** hay varias formas de usar **CSS** para dar estilo a los co
 :::
 <br />
 
-Para poder activar **sass** es necesario instalar la libreria, **Vite** ya viene preparado para su uso.
+Para poder activar **sass** es necesario instalar la librería, **Vite** ya viene preparado para su uso.
 
 ```bash
 npm i --save sass
@@ -85,7 +85,7 @@ https://github.com/hondilla/react-course/blob/edge/7.2-css/src/components/Table/
 
 **CSS-in-JS** es una técnica de estilo en la que se utiliza **JavaScript** para dar estilo a los componentes. 
 
-Cuando este **JavaScript** se analiza, se **genera CSS**. Permite **abstraer el CSS** al nivel del propio componente, utilizando **JavaScript** para describir los estilos de forma **declarativa** y **manteníble**.
+Cuando este **JavaScript** se analiza, se **genera CSS**. Permite **abstraer el CSS** al nivel del propio componente, utilizando **JavaScript** para describir los estilos de forma **declarativa** y **mantenible**.
 
 Es capaz de otras cosas que no eran posibles utilizando las técnicas tradicionales de CSS. 
 
@@ -119,7 +119,7 @@ https://github.com/hondilla/react-course/blob/edge/7.3-css/src/components/Table/
 ```
 <br />
 
-Si el componente ya esta creado y no es posible crearlo con `styled-component`, podemos **envolver** el componente utilizando el **HOC** `styled` y aplicar los estilos. El componente envuelto recibe por parámetro la **clase** con los estilos, esta debe usarse en la propiedad `className` del elemento envuelto.
+Si el componente ya está creado y no es posible crearlo con `styled-component`, podemos **envolver** el componente utilizando el **HOC** `styled` y aplicar los estilos. El componente envuelto recibe por parámetro la **clase** con los estilos, esta debe usarse en la propiedad `className` del elemento envuelto.
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/7.4-css/src/components/Table/Table.jsx
