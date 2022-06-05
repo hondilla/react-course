@@ -31,6 +31,7 @@ Con `useEffect` es posible acceder al ciclo de vida, recibe una función, como p
 :::tip
 *Al añadir el **efecto**, la función es ejecutada cada vez que el componente se renderiza.*
 :::
+<br />
 
 ```jsx
 import { useEffect } from 'react';
@@ -43,6 +44,8 @@ const Component = () => {
 
 export default Component;
 ```
+<br />
+
 
 `useEffect` retorna una función que es ejecutada cuando el componente es renderizado o se desmonta.
 
@@ -58,8 +61,10 @@ const Component = () => {
 
 export default Component;
 ```
+<br />
 
 Cada vez que el componente se renderiza se van acumulando nuevos intervalos.
+<br />
 
 <div align="center">
     <ReactPlayer height="100%" playing={true} loop url={useBaseUrl('/vids/react/accumulates.mp4')} />
