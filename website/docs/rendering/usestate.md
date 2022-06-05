@@ -83,7 +83,7 @@ Sobre esta copia se busca la **columna** mediante la función `find` utilizando 
 <br />
 
 <div align="center">
-    <ReactPlayer playing={true} loop url={useBaseUrl('/vids/react/dom.mp4')} />
+    <ReactPlayer height="100%" playing={true} loop url={useBaseUrl('/vids/react/dom.mp4')} />
 </div>
 
 <br />
@@ -267,7 +267,7 @@ Al cambiar el estado en el componente `App`, este se renderiza junto con todos s
 <br />
 
 <div align="center">
-    <ReactPlayer playing={true} loop url={useBaseUrl('/vids/react/state-new.mp4')} />
+    <ReactPlayer height="100%" playing={true} loop url={useBaseUrl('/vids/react/state-new.mp4')} />
 </div>
 
 <br />

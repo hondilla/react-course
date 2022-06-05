@@ -68,9 +68,9 @@ El término **Virtual DOM** es normalmente asociado con elementos de **React**�
 * [DOM virtual y detalles de implementación - React](https://es.reactjs.org/docs/faq-internals.html)
 :::
 
-<p align="center">
+<div align="center">
   <img alt="Virtual DOM" src={useBaseUrl('/img/react/virtual-dom.png')} />
-</p>
+</div>
 
 :::info Docs
 * [Reconciliación - React](https://es.reactjs.org/docs/reconciliation.html)
