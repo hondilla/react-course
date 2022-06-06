@@ -98,7 +98,7 @@ https://github.com/hondilla/react-course/blob/edge/8.12-rendering/src/components
 <br />
 
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/8.12-rendering/src/components/Table/TableInputButton.jsx#L27
+https://github.com/hondilla/react-course/blob/edge/8.12-rendering/src/components/Table/TableInputButton.jsx#L24
 ```
 <br />
 
