@@ -1,3 +1,4 @@
+import { memo, useEffect } from "react";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -17,10 +18,14 @@ const Logo = styled.div`
     line-height:100px;
 `;
 
-const TopHeader = ({ title }) => <Header>
-    <Wrapper>
-        <Logo>{ title }</Logo>
-    </Wrapper>
-</Header>;
+const TopHeader = ({ title }) => {
+  useEffect(() => console.log('<Header />'))
 
-export default TopHeader;
+  return <Header>
+    <Wrapper>
+      <Logo>{ title }</Logo>
+    </Wrapper>
+  </Header>;
+}
+
+export default memo(TopHeader);

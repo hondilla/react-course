@@ -2,7 +2,7 @@ import { memo, useEffect } from "react";
 
 const TableColumnsSelector = ({ columns, setColumns }) => {
 
-  useEffect(() => console.log('selector render'));
+  useEffect(() => console.log('<TableColumnsSelector />'));
 
   const onChangeHandler = ({ target }) => {
     setColumns(state => {

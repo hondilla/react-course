@@ -16,7 +16,7 @@ const App = () => {
       id: rows.length,
       name: country
     }]);
-  }, [])
+  }, []);
 
   return <>
     <Header title="React Course" />

@@ -11,10 +11,17 @@ const App = () => {
   const columns = [ 'Id', 'Nombre' ];
   const [rows, setRows] = useState([]);
 
+  const setCountry = country => {
+    setRows(rows => [...rows, {
+      id: rows.length,
+      name: country
+    }]);
+  };
+
   return <>
     <Header title="React Course" />
     <div className="container">
-      <TableInputButton setRows={ setRows } />
+      <TableInputButton setCountry={ setCountry } />
       <Table>
         <TableHead>
           <TableColumns columns={ columns } />

@@ -8,6 +8,4 @@ const TableColumns = ({ columns }) => {
   </tr>;
 }
 
-
-
 export default memo(TableColumns);

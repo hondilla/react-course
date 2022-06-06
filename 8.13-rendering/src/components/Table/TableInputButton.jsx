@@ -1,15 +1,12 @@
 import { memo, useEffect, useRef } from "react";
 
-const TableInputButton = ({ setRows }) => {
+const TableInputButton = ({ setCountry }) => {
   const country = useRef();
 
   useEffect(() => console.log('<TableInputButton />'));
 
   const onClickHandler = () => {
-    setRows(rows => [...rows, {
-      id: rows.length,
-      name: country.current.value
-    }]);
+    setCountry(country.current.value);
   }
   
   return <div className="input-group mb-3">
