@@ -36,11 +36,6 @@ const App = () => {
 
   const [modalState, setModalState] = useState({isOpen: false, country: {}});
 
-  const Modal = () => modalState.isOpen && <TableDetailsModal
-    modalState={ modalState }
-    setModalState={ setModalState }
-  />;
-
   return <>
     <Header title="React Course" />
     <div className="container">
@@ -54,7 +49,7 @@ const App = () => {
           <TableBody rows={ filteredRows } setModalState={ setModalState }/>
         </Table> : <span>Cargando...</span> }
       </ErrorBoundary>
-      <Modal />
+      <TableDetailsModal modalState={ modalState } setModalState={ setModalState } />
     </div>
   </>
 }

@@ -15,5 +15,4 @@ const TableRow = ({ row, setModalState }) => {
   </tr>;
 }
   
-
 export default TableRow;

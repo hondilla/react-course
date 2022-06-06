@@ -14,3 +14,4 @@ slug: '/testing'
 |jest-environment-jsdom|Implementación del DOM en JavaScript para Jest.|
 |esbuild-jest|Permite usar Jest con esBuild.|
 |identity-obj-proxy|Mockear módulos.|
+|unplugin-clear-testid|Permite eliminar todos los atributos test-id del HTML.|

@@ -14,6 +14,5 @@ const TableRow = ({ row, setModalState }) => {
     { Object.keys(row).map((key) => <td key={ key }>{ fieldType(row[key]) }</td>) }
   </tr>;
 }
-  
 
 export default TableRow;
