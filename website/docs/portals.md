@@ -27,7 +27,7 @@ https://github.com/hondilla/react-course/blob/edge/9.0-portals/src/components/Ta
 
 Una vez configurado el portal, el componente se va a comportar como cualquier otro y es utilizable desde cualquier punto de la aplicación.
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/9.0-portals/src/components/App.jsx
+https://github.com/hondilla/react-course/blob/edge/9.0-portals/src/components/App.jsx#L38-L51
 ```
 <br />
 

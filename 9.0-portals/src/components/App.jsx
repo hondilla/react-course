@@ -48,7 +48,7 @@ const App = () => {
       </Table> : <span>Cargando...</span> }
       <TableDetailsModal modalState={ modalState } setModalState={ setModalState } />
     </div>
-  </>
+  </>;
 }
 
 export default App;

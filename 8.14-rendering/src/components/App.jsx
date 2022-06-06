@@ -11,7 +11,7 @@ const App = () => {
   const columns = useMemo(() => [ 'Id', 'Name' ], []);
   const [rows, setRows] = useState([]);
 
-  const setCountry = useCallback((country) => {
+  const setCountry = useCallback(country => {
     setRows(rows => [...rows, {
       id: rows.length,
       name: country

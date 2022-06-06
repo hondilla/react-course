@@ -259,35 +259,12 @@ De la misma manera que `memo` se combina con `useMemo` para memorizar las refere
 Cada vez que el componente `<App>` es renderizado la función `setCountry` se crea de nuevo, creado una nueva referencia en memoria y provocando que el componente `<TableInputButton>` se renderice debido a que su propiedad `setCountry` ha sido actualizada.
 
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/8.13-rendering/src/components/App.jsx
+https://github.com/hondilla/react-course/blob/edge/8.14-rendering/src/components/App.jsx#L14-L19
 ```
-<br />
-
-<div align="center">
-
-```plantuml useCallback
-class App {
- + columns
- + setCountry(country)
-}
-
-App --> App : re-rendering
-
-package Memory {
-  class setCountry1 {}
-  class setCountry2 {}
-  class setCountryN {}
-}
-
-App --> setCountry1
-App --> setCountry2
-App --> setCountryN
-```
-</div>
-
 <br />
 
 Al utilizar `useCallback` para memorizar la referencia de la función en conjunto con `memo` para memorizar las propiedades del componente `<TableInputButton>`, este no volverá a renderizarse cuando `<App>` se renderice al cambiar el estado provocado por añadir un nuevo país.
+<br />
 
 <div align="center">
 
@@ -306,8 +283,6 @@ App --> setCountry : "  useCallback"
 ```
 </div>
 
-<br />
-
 ### Sin dependencias
 <div align="center">
     <ReactPlayer height="100%" playing={true} loop url={useBaseUrl('/vids/react/empty-dependencies.mp4')} />
@@ -320,6 +295,9 @@ App --> setCountry : "  useCallback"
 
 <br />
 
+El resultado final tendrá memorizado tanto la referencia a la función `setCountry` como el `array` `columns`.
+
+<br />
 <div align="center">
 
 ```plantuml useCallback

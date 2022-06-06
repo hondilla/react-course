@@ -16,12 +16,9 @@ class ErrorBoundary extends Component {
   }
   
   render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <h1>Soy un error en React, pero la aplicación sigue activa.</h1>;
-    }
-
-    return this.props.children; 
+    return this.state.hasError
+      ? <h1>Soy un error en React, pero la aplicación sigue activa.</h1>
+      : this.props.children; 
   }
 }
 
