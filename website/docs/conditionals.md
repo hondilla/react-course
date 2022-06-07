@@ -12,7 +12,7 @@ La representación condicional es un término que describe la capacidad de rende
 - Implementación de niveles de permiso.
 - Manejar la autenticación y la autorización.
 
-El renderizado condicional en **React** funciona de la misma forma que lo hacen las condiciones en **JavaScript**. Puedes usar el condicional `if` o el **operador ternario** para crear elementos dinámicamente en base al valor del estado o las propiedades que recibe el componente.
+El renderizado condicional en **React** funciona de la misma forma que lo hacen las condiciones en **JavaScript**. Es posible utilizar la sentencia `if` o el **operador ternario** para crear elementos dinámicamente en base al valor del estado o las propiedades que recibe el componente.
 
 El componente `App` contiene un **componente privado**, el componente `NoContentInTable` el cual devuelve un mensaje indicando que la tabla está vacía. La función `checkEmptyTable` hará la comprobación dado el valor de la **constante** `rows` para saber si debe renderizar el componente `Table` o el componente `NoContentInTable`.
 
