@@ -28,8 +28,8 @@ export const useCountries = () => {
         const result = await request.json();
         let countries = [];
         if(request.ok) {
-          countries = result.reduce((acc, country) => {
-            acc.push({ 
+          countries = result.map(country => {
+            return { 
               "id": country.cca2, 
               "name": country.name.common,
               "cca3": country.cca3,
@@ -40,9 +40,8 @@ export const useCountries = () => {
               "region": country.region,
               "subregion": country.subregion,
               "population": country.population
-            });
-            return acc;
-          }, []);
+            };
+          });
         }
         setIsLoading(false);
         setCountries(countries);

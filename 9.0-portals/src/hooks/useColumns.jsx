@@ -3,19 +3,14 @@ import { useState } from 'react';
 export const useColumns = initialColumns => {
   const [columns, setColumns] = useState(initialColumns);
 
-  const columnsReducer = () => (acc, {alias}) => {
-    acc.push(alias)
-    return acc;
-  }
-
   const visibleColumns = columns
     .filter(({ isVisible }) => isVisible === true);
 
   const excludedColumns = columns
-    .reduce(columnsReducer(), [])
+    .map(({alias}) => alias)
     .filter(column => 
       !visibleColumns
-      .reduce(columnsReducer(), [])
+      .map(({alias}) => alias)
       .includes(column)
     );
 

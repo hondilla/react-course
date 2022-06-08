@@ -17,10 +17,9 @@ export const useCountries = () => {
         const result = await request.json();
         let countries = [];
         if(request.ok) {
-          countries = result.reduce((acc, country) => {
-            acc.push({ "id": country.cca2, "name": country.name.common });
-            return acc;
-          }, [])
+          countries = result.map(country => {
+            return { "id": country.cca2, "name": country.name.common };
+          })
         }
         setIsLoading(false);
         dispatch({ type: 'SET_COUNTRIES', payload: { countries: countries } });

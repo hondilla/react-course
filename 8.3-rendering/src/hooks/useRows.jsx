@@ -5,11 +5,10 @@ export const useRows = (initialRows, columns) => {
 
   const filteredRows = structuredClone(initialRows)
     .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
-    .reduce((acc, row) => {
+    .map(row => {
       columns.forEach((key) => delete row[key]);
-      acc.push(row);
-      return acc;
-    }, []);
+      return row;
+    });;
 
   return [filteredRows, setSearch];
 }

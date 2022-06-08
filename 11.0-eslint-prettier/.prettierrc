@@ -1,0 +1,6 @@
+{
+    "singleQuote": true,
+    "quoteProps": "consistent",
+    "jsxSingleQuote": true,
+    "arrowParens": "avoid"
+}

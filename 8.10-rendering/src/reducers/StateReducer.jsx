@@ -22,21 +22,16 @@ export const stateReducer = (state, { type, payload }) => {
 
 const visibleColumns = ({ columns }) => columns.filter(({ isVisible }) => isVisible === true);
 const excludedColumns = ({ columns, visibleColumns }) => columns
-  .reduce(columnsReducer(), [])
+  .map(({alias}) => alias)
   .filter(column => 
     !visibleColumns
-    .reduce(columnsReducer(), [])
+    .map(({alias}) => alias)
     .includes(column)
   );
-const columnsReducer = () => (acc, {alias}) => {
-  acc.push(alias)
-  return acc;
-}
 
 const rowsFilter = (countries, columns) => {
-  return structuredClone(countries).reduce((acc, row) => {
+  return structuredClone(countries).map(row => {
     columns.forEach((key) => delete row[key]);
-    acc.push(row);
-    return acc;
-  }, []);
+    return row;
+  });
 }

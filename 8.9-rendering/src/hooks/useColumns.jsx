@@ -4,19 +4,14 @@ import { columnVisibility } from '../reducers/ColumnVisibility';
 export const useColumns = initialColumns => {
   const [columns, dispatch] = useReducer(columnVisibility, initialColumns);
 
-  const columnsReducer = () => (acc, {alias}) => {
-    acc.push(alias)
-    return acc;
-  }
-
   const visibleColumns = columns
     .filter(({ isVisible }) => isVisible === true);
 
   const excludedColumns = columns
-    .reduce(columnsReducer(), [])
+    .map(({alias}) => alias)
     .filter(column => 
       !visibleColumns
-      .reduce(columnsReducer(), [])
+      .map(({alias}) => alias)
       .includes(column)
     );
 

@@ -7,10 +7,12 @@ import countries from '../countries.json';
 const App = () => {
   const columns = [ 'Id', 'Nombre' ];
   const rows = () => countries.reduce((acc, country) => {
-    acc.push({
-      "id": country.cca2,
-      "name": country.name.common
-    })
+    if(country.population >= 100000) {
+      acc.push({
+        "id": country.cca2,
+        "name": country.name.common
+      });
+    }
     return acc;
   }, []);
 

@@ -1,7 +1,6 @@
 export const useRows = (initialRows, columns) => {
-  return structuredClone(initialRows).reduce((acc, row) => {
+  return structuredClone(initialRows).map(row => {
     columns.forEach((key) => delete row[key]);
-    acc.push(row);
-    return acc;
-  }, []);
+    return row;
+  });
 }
