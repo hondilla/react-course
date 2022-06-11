@@ -10,7 +10,7 @@ https://github.com/hondilla/react-course/blob/edge/9.0-portals/index.html#L12
 ```
 <br />
 
-Uno de los inconvenientes que se puede presentar al usar este sistema, es la necesidad de tener un elemento por encima del `div` principal.
+Uno de los inconvenientes que se puede presentar al usar este sistema, es la necesidad de tener un elemento por encima de los elementos del `div` principal.
 Los portals permiten definir nuevos puntos de entrada para componentes de **React**, permitiendo abandonar el árbol DOM principal de la aplicación. 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/9.0-portals/index.html#L11-L15
