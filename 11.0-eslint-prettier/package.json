@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ext .js,.jsx",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",

@@ -1,26 +1,28 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Header = styled.header`
-    width: 100%;
-    overflow: hidden;
-    background: #252932;
-    margin-bottom: 20px;
+  width: 100%;
+  overflow: hidden;
+  background: #252932;
+  margin-bottom: 20px;
 `;
 const Wrapper = styled.div`
-    margin-left: 50px;
-    overflow: hidden;
+  margin-left: 50px;
+  overflow: hidden;
 `;
 
 const Logo = styled.div`
-    color:#f2f2f2;
-    font-size:50px;
-    line-height:100px;
+  color: #f2f2f2;
+  font-size: 50px;
+  line-height: 100px;
 `;
 
-const TopHeader = ({ title }) => <Header>
+const TopHeader = ({ title }) => (
+  <Header>
     <Wrapper>
-        <Logo>{ title }</Logo>
+      <Logo>{title}</Logo>
     </Wrapper>
-</Header>;
+  </Header>
+);
 
 export default TopHeader;

@@ -5,50 +5,55 @@ import TableColumns from './Table/TableColumns';
 import TableColumnsSelector from './Table/TableColumnsSelector';
 import TableHead from './Table/TableHead';
 import TableRowSearcher from './Table/TableRowSearcher';
-import { useColumns } from "../hooks/useColumns";
-import { useRows } from "../hooks/useRows";
+import { useColumns } from '../hooks/useColumns';
+import { useRows } from '../hooks/useRows';
 import { useCountries } from '../hooks/useCountries';
 import { useState } from 'react';
 import TableDetailsModal from './Table/TableDetailsModal';
 
 const App = () => {
   const initialColumns = [
-    {"name": "Id", "alias": "id", "isVisible": true},
-    {"name": "Nombre", "alias": "name", "isVisible": true},
-    {"name": "Cca3", "alias": "cca3", "isVisible": true},
-    {"name": "Capital", "alias": "capital", "isVisible": true},
-    {"name": "Divisas", "alias": "currencies", "isVisible": true},
-    {"name": "Bandera", "alias": "flag", "isVisible": true},
-    {"name": "Idiomas", "alias": "languages", "isVisible": true},
-    {"name": "Región", "alias": "region", "isVisible": true},
-    {"name": "Sub Región", "alias": "subregion", "isVisible": true},
-    {"name": "Población", "alias": "population", "isVisible": true},
+    { name: 'Id', alias: 'id', isVisible: true },
+    { name: 'Nombre', alias: 'name', isVisible: true },
+    { name: 'Cca3', alias: 'cca3', isVisible: true },
+    { name: 'Capital', alias: 'capital', isVisible: true },
+    { name: 'Divisas', alias: 'currencies', isVisible: true },
+    { name: 'Bandera', alias: 'flag', isVisible: true },
+    { name: 'Idiomas', alias: 'languages', isVisible: true },
+    { name: 'Región', alias: 'region', isVisible: true },
+    { name: 'Sub Región', alias: 'subregion', isVisible: true },
+    { name: 'Población', alias: 'population', isVisible: true },
   ];
   const [isLoading, countries, setSearch] = useCountries();
-  const [
-    columns, 
-    setColumns, 
-    visibleColumns, 
-    excludedColumns
-  ] = useColumns(initialColumns);
+  const [columns, setColumns, visibleColumns, excludedColumns] =
+    useColumns(initialColumns);
   const filteredRows = useRows(countries, excludedColumns);
 
-  const [modalState, setModalState] = useState({isOpen: false, country: {}});
+  const [modalState, setModalState] = useState({ isOpen: false, country: {} });
 
-  return <>
-    <Header title="React Course" />
-    <div className="container">
-      <TableRowSearcher setSearch={ setSearch } />
-      <TableColumnsSelector columns={ columns } setColumns={ setColumns } />
-      { !isLoading ? <Table>
-        <TableHead>
-          <TableColumns columns={ visibleColumns } />
-        </TableHead>
-        <TableBody rows={ filteredRows } setModalState={ setModalState }/>
-      </Table> : <span>Cargando...</span> }
-      <TableDetailsModal modalState={ modalState } setModalState={ setModalState } />
-    </div>
-  </>;
-}
+  return (
+    <>
+      <Header title='React Course' />
+      <div className='container'>
+        <TableRowSearcher setSearch={setSearch} />
+        <TableColumnsSelector columns={columns} setColumns={setColumns} />
+        {!isLoading ? (
+          <Table>
+            <TableHead>
+              <TableColumns columns={visibleColumns} />
+            </TableHead>
+            <TableBody rows={filteredRows} setModalState={setModalState} />
+          </Table>
+        ) : (
+          <span>Cargando...</span>
+        )}
+        <TableDetailsModal
+          modalState={modalState}
+          setModalState={setModalState}
+        />
+      </div>
+    </>
+  );
+};
 
 export default App;

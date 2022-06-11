@@ -33,17 +33,17 @@ export const useCountries = () => {
       let countries = [];
       if (request.ok) {
         countries = result.map(country => {
-          return { 
-            "id": country.cca2, 
-            "name": country.name.common,
-            "cca3": country.cca3,
-            "capital": country.capital ? country.capital.join(',') : '-',
-            "currencies": parseField(country.currencies ?? {}),
-            "flag": country.flags.svg,
-            "languages": parseField(country.languages ?? {}),
-            "region": country.region,
-            "subregion": country.subregion,
-            "population": country.population
+          return {
+            id: country.cca2,
+            name: country.name.common,
+            cca3: country.cca3,
+            capital: country.capital ? country.capital.join(',') : '-',
+            currencies: parseField(country.currencies ?? {}),
+            flag: country.flags.svg,
+            languages: parseField(country.languages ?? {}),
+            region: country.region,
+            subregion: country.subregion,
+            population: country.population,
           };
         });
       }

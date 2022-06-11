@@ -1,6 +1,3 @@
-const TableHead = ({ children }) => 
-  <thead>
-    { children }
-  </thead>;
+const TableHead = ({ children }) => <thead>{children}</thead>;
 
 export default TableHead;

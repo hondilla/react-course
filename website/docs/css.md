@@ -57,6 +57,10 @@ https://github.com/hondilla/react-course/blob/edge/7.1-css/src/components/Table/
 *El valor que recibe la propiedad `style` va entre las **llaves dobles**, las **primeras llaves** indican que se va a utilizar **JavaScript**, las **segundas el objeto** que representan los estilos **CSS**. Las propiedades **CSS** se definen dentro del objeto en formato **camelCase**.*
 :::
 
+:::info Docs
+* [Why you shouldn't use inline styling in production React apps - LogRocket Blog](https://blog.logrocket.com/why-you-shouldnt-use-inline-styling-in-production-react-apps/)
+:::
+
 ## CSS Module
 
 Un **módulo CSS** es un archivo CSS en el que todos los nombres de clase y de animación tienen un ámbito local por defecto.
@@ -104,7 +108,7 @@ Es posible hacer que los **estilos** sean **dinámicos** en línea con sólo una
 <br />
 
 :::info Docs
-* [styled-components](https://styled-components.com/)
+* [styled-components - Visual primitives for the component age](https://styled-components.com/)
 :::
 <br />
 
@@ -125,10 +129,6 @@ Si el componente ya está creado y no es posible crearlo con `styled-component`,
 https://github.com/hondilla/react-course/blob/edge/7.4-css/src/components/Table/Table.jsx
 ```
 <br />
-
-:::info Docs
-* [Why you shouldn't use inline styling in production React apps - LogRocket Blog](https://blog.logrocket.com/why-you-shouldnt-use-inline-styling-in-production-react-apps/)
-:::
 
 ## Media Queries
 
