@@ -58,3 +58,7 @@ npm i --save-dev cypress @testing-library/cypress
 * [Testing Library Cypress](https://testing-library.com/docs/cypress-testing-library/intro)
 * [Cypress](https://www.cypress.io/)
 :::
+
+::info Docs
+* [Proyecto](https://github.com/hondilla/react-course/tree/edge/12.0-testing)
+:::
