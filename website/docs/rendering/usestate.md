@@ -107,9 +107,9 @@ setColumns([
 ```
 <br />
 
-- Un **componente controlado** es aquel que toma su valor actual a través de `props` y notifica los cambios a través de `events` como `onChange`. Un componente padre lo "controla" manejando su propio estado y pasando los nuevos valores mediante `props` al componente controlado. También se podría llamar a esto un "componente tonto".
-- Un **componente no controlado** es uno que almacena su propio estado internamente, y se consulta el DOM usando una referencia para encontrar su valor actual cuando se necesita. como se haría en HTML.
-<br />
+- Un **componente controlado** es aquel cuyo estado es manejado directamente por React, es decir, React le quita el control de estado a la implementación nativa del navegador y expone dicho control al desarrollador por medio de algunas simples API.
+
+- En el otro lado del espectro un **componente no controlado** es aquel que almacena su propio estado, no es controlado por React y se lo consulta al DOM usando una referencia para encontrar su valor actual cuando se necesita, el estado se mantiene en el funcionamiento nativo del navegador.
 <br />
 
 :::tip
