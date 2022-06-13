@@ -107,9 +107,9 @@ setColumns([
 ```
 <br />
 
-- Un **componente controlado** es aquel cuyo estado es manejado directamente por React, es decir, React le quita el control de estado a la implementación nativa del navegador y expone dicho control al desarrollador por medio de algunas simples API.
+- Un **componente controlado** es aquel cuyo estado es manejado directamente por React, es decir, React le quita el control de estado a la implementación nativa del navegador y expone dicho control al desarrollador por medio de algunas API.
 
-- En el otro lado del espectro un **componente no controlado** es aquel que almacena su propio estado, no es controlado por React y se lo consulta al DOM usando una referencia para encontrar su valor actual cuando se necesita, el estado se mantiene en el funcionamiento nativo del navegador.
+- Por otro lado, un **componente no controlado** es aquel que almacena su propio estado, no es controlado por React y se lo consulta al DOM usando una referencia para encontrar su valor actual cuando se necesite, el estado se mantiene en el funcionamiento nativo del navegador.
 <br />
 
 :::tip
