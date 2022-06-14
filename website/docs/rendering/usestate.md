@@ -185,6 +185,7 @@ class TableColumns {
     + columns
 }
 class TableBody {
+    + columns
     + rows
 }
 class TableRow {
