@@ -1,14 +1,14 @@
 import { useState } from "react";
 
-export const useRows = (initialRows, columns) => {
+export const useRows = (initialRows, excludedColumns) => {
   const [search, setSearch] = useState('');
 
   const filteredRows = structuredClone(initialRows)
     .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))
     .map(row => {
-      columns.forEach((key) => delete row[key]);
+      excludedColumns.forEach(column => delete row[column]);
       return row;
-    });;
+    });
 
   return [filteredRows, setSearch];
 }
