@@ -189,6 +189,7 @@ class TableBody {
     + rows
 }
 class TableRow {
+    + columns
     + row
 }
 App *--> Table
