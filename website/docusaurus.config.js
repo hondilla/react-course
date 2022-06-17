@@ -24,16 +24,24 @@ const config = {
         routeBasePath: '/',
         sidebarPath: require.resolve('./sidebars.js'),
         remarkPlugins: [
-          [ simplePlantUML, { baseUrl: "https://www.plantuml.com/plantuml/svg" }],
+          [simplePlantUML, { baseUrl: "https://www.plantuml.com/plantuml/svg" }],
         ],
         sidebarCollapsible: false,
-      }
-    }),
+      },
+      theme: {
+        customCss: require.resolve('./src/css/custom.css'),
+      },
+    })
   ]],
   themes: [
-    '@saucelabs/theme-github-codeblock'
+    '@saucelabs/theme-github-codeblock',
   ],
   themeConfig: ({
+    algolia: {
+      appId: '0HBWCCMQT7',
+      apiKey: '00042203412523a81a275ab379d44029',
+      indexName: 'react-course',
+    },
     navbar: {
       title: 'React Course',
       logo: {
@@ -41,6 +49,9 @@ const config = {
         src: 'img/react.svg',
       },
       items: [{
+        type: 'search',
+        position: 'left',
+      }, {
         href: 'https://github.com/hondilla/react-course',
         label: 'GitHub',
         position: 'right',
