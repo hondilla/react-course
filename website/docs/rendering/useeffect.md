@@ -32,8 +32,7 @@ Los **efectos secundarios** son todas las **operaciones** que afectan al **compo
 
 :::tip
 - *Al añadir el **efecto**, la función es ejecutada cada vez que el componente se renderiza.*
-- *`useEffect` no es el **ciclo de vida**.*
-- *`useEffect` se suele confundir con **ciclo de vida** debido a como funciona en **componentes de clase**.*
+- *`useEffect` no es el **ciclo de vida**, se suele confundir debido a como funciona en **componentes de clase**.*
 - *`useEffect` existe para **sincronizar** el **estado del mundo** con el **estado del componente**.*
 :::
 <br />
