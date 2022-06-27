@@ -11,7 +11,7 @@ import ReactPlayer from 'react-player';
 En **React**, cada componente pasa por diferentes fases durante su vida.
 
 <p align="center">
-  <img alt="Virtual DOM" width="100%" src={useBaseUrl('/img/react/life-cycle.png')} />
+  <img alt="Life Cycle" width="100%" src={useBaseUrl('/img/react/life-cycle.png')} />
 </p>
 
 La fase de **Mounting** significa que el componente está en proceso de insertar su contenido en el DOM.
@@ -22,9 +22,15 @@ La última fase **Unmounting** se llama cuando un componente tiene que ser elimi
 
 Con `useEffect` es posible realizar **efectos secundarios (side effects)** en los componentes, recibe una función como primer parámetro, que es ejecutada cada vez que un componente es renderizado, el segundo parámetro es opcional, es un `array` de dependencias que en caso de ser actualizadas provocan la ejecución de la función.
 
-Los **efectos secundarios** son todas las **operaciones** que afectan al **componente** y que **no pueden realizarse** durante el **renderizado**, la obtención de datos, las suscripciones o el cambio manual del DOM son ejemplos de efectos secundarios.
+Los **efectos secundarios** son todas las **operaciones** que afectan al **componente** y que **no pueden realizarse** durante el **renderizado**, la **obtención de datos, las suscripciones o el cambio manual del DOM son ejemplos de efectos secundarios**.
+<br />
 
-`useEffect` ejecutará la función cuando se cumple una de las condiciones:
+<p align="center">
+  <img alt="Life Cycle Hooks" width="50%" src={useBaseUrl('/img/react/hook-flow.png')} />
+</p>
+<br />
+
+`useEffect` ejecutará la función en la fase de **update**, después de que el componente haya sido montado en el navegador, cuando se cumple una de las condiciones:
 
 - Por un cambio de estado (`useState`) propio o de un ancestro.
 - Por recibir propiedades nuevas.
@@ -34,6 +40,11 @@ Los **efectos secundarios** son todas las **operaciones** que afectan al **compo
 - *Al añadir el **efecto**, la función es ejecutada cada vez que el componente se renderiza.*
 - *`useEffect` no es el **ciclo de vida**, se suele confundir debido a como funciona en **componentes de clase**.*
 - *`useEffect` existe para **sincronizar** el **estado del mundo** con el **estado del componente**.*
+:::
+<br />
+
+:::warning
+*React **remonta intencionalmente** los **componentes en desarrollo** para **ayudar** a **encontrar errores**. La pregunta correcta no es "cómo ejecutar un efecto una vez", sino "**cómo arreglar el efecto** para que **funcione** después de **volver a montarlo**. Por lo general, la respuesta es **implementar** la **función de limpieza**.*
 :::
 <br />
 
@@ -85,9 +96,13 @@ La función de retorno de `useEffect` limpia el intervalo de manera que cada vez
 <br />
 
 :::tip
-*La función ejecutada cuando el componente se desmonta, permite evitar comportamientos activos después de eliminar el componente del DOM.*
+*La función ejecutada cuando el componente se **desmonta**, permite **evitar comportamientos activos** después de **eliminar el componente del DOM**.*
 :::
+<br />
 
+:::tip
+*Es probable que el **uso** de **efectos no sea necesario**, los **efectos** se utilizan normalmente para **"salir" del código React** y **sincronizar** con algún **sistema externo**.*
+:::
 <br />
 
 Para evitar que `useEffect` ejecute la función una vez el componente ha sido renderizado, se añade un `array` vacío como segundo parámetro de la función `useEffect`. Este uso del `useEffect` se suele relacionar con la carga de datos al renderizar componentes, en este caso, se modifica el **hook** que se encarga de los datos para cargar el listado de países de forma remota.
@@ -104,7 +119,7 @@ https://github.com/hondilla/react-course/blob/edge/8.4-rendering/src/hooks/useCo
 
 <br />
 
-`useEffect` no ejecutará la función en los siguientes renderizados si no tiene un listado de dependencias a observar.
+`useEffect` **no ejecutará** la función en los **siguientes renderizados** si **no** tiene un listado de **dependencias** a **observar**.
 
 <div align="center">
     <ReactPlayer playing={true} loop url={useBaseUrl('/vids/react/props-1.mp4')} />
@@ -112,7 +127,7 @@ https://github.com/hondilla/react-course/blob/edge/8.4-rendering/src/hooks/useCo
 
 <br />
 
-`useEffect` ejecutará la función la primera vez que el componente se renderice y posteriormente cuando las dependencias se actualicen.
+`useEffect` ejecutará la función **la primera vez** que el componente se **renderice** y **posteriormente** cuando las **dependencias se actualicen**.
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/8.5-rendering/src/hooks/useCountries.jsx
@@ -137,11 +152,19 @@ https://github.com/hondilla/react-course/blob/edge/8.5-rendering/src/hooks/useCo
 <br />
 
 :::tip
-*`useEffect` es **asíncrono**, para utilizarlo de manera **síncrona**, **React** dispone del **hook** `useLayoutEffect`.*
+*Para realizar **peticiones** a **sistemas externos** es **recomendable** utilizar **librerías** como **React Query**, **useSWR** que ofrecen **mecanismos** para **optimizar** las **llamadas**, que de lo **contrario** se deberían **implementarse** **manualmente**.*
+:::
+
+:::tip
+*`useEffect` es **asíncrono**, para utilizarlo de manera **síncrona** antes de que el componente sea montado, **React** dispone del **hook** `useLayoutEffect`.*
 :::
 
 :::info Docs
 * [Usando el Hook de efecto](https://es.reactjs.org/docs/hooks-effect.html)
 * [A Visual Guide to useEffect](https://alexsidorenko.com/blog/useeffect/)
 * [How many re-renders is too many?](https://alexsidorenko.com/blog/react-how-many-rerenders/)
+* [Synchronizing with effects](https://beta.reactjs.org/learn/synchronizing-with-effects)
+* [You might not need and effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
+* [useSWR](https://swr.vercel.app/es-ES)
+* [React Query](https://react-query.tanstack.com/)
 :::

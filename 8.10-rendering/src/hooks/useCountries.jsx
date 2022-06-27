@@ -11,9 +11,11 @@ export const useCountries = () => {
   const COUNTRY_BY_NAME_URL = `${COUNTRIES_API}/name/${search}`;
 
   useEffect(() => {
+    const controller = new AbortController();
+
     (async () => {
         setIsLoading(true);
-        const request = await fetch(search ? COUNTRY_BY_NAME_URL : ALL_COUNTRIES_URL);
+        const request = await fetch(search ? COUNTRY_BY_NAME_URL : ALL_COUNTRIES_URL, { signal: controller.signal });
         const result = await request.json();
         let countries = [];
         if(request.ok) {
@@ -24,6 +26,8 @@ export const useCountries = () => {
         setIsLoading(false);
         dispatch({ type: 'SET_COUNTRIES', payload: { countries: countries } });
     })();
+    
+    return () => controller.abort();
   }, [search]);
 
   return [isLoading, setSearch];
