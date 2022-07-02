@@ -4,20 +4,24 @@ slug: '/ref'
 ---
 
 # Referencias
-`useRef` es un **hook** que devuelve un objeto ***ref*** mutable cuya propiedad `current` se inicializa con el valor pasado como parámetro. 
+`useRef` es un **hook** que devuelve un objeto ***ref*** **mutable** cuya propiedad `current` se **inicializa** con el **valor** pasado como **parámetro**. 
 
-El objeto devuelto se mantendrá persistente durante la vida completa del componente.
+El objeto devuelto se **mantendrá persistente** durante la **vida completa del componente**.
 
-Un caso de uso común es acceder a un elemento hijo de forma imperativa. Combinado con el **hook** `useEffect`, es posible aplicar el **foco** sobre el elemento referenciado.
+`useRef` **no notifica** cuando su **contenido ha cambiado** y como consecuencia **no** va a **provocar** un **nuevo renderizado** en los componentes. 
 
-`useRef` no notifica cuando su contenido ha cambiado y como consecuencia no va a provocar un nuevo renderizado en los componentes. El input está asociado a la referencia `search` el valor contenido va a cambiar en el momento que el input sea rellenado.
+El uso de `useRef` permite **almacenar y mutar datos** en un **componente**, o en un **elemento** del **real DOM**.  
+
+`useRef` también permite **acceder** a un **elemento del real DOM** de **forma imperativa**. 
+
+Combinado con el **hook** `useEffect`, es posible aplicar el **foco** sobre el elemento referenciado. El `input` está asociado a la referencia `search` el valor contenido en `current` cambiará en el momento que el `input` cambie.
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/8.6-rendering/src/components/Table/TableRowSearcher.jsx
 ```
 <br />
 
-Cuando la referencia es creada desde un componente padre y ésta debe propagarse a otro componente hijo hasta llegar al elemento, debe usarse junto con el **HOC** `forwardRef`.
+Cuando la **referencia** es creada desde un **componente padre** y ésta debe **propagarse** a un **componente hijo** hasta llegar al elemento, debe usarse junto con el **HOC** `forwardRef`.
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/8.7-rendering/src/components/Table/TableRowSearcher.jsx
