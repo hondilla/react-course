@@ -43,7 +43,7 @@ const config = {
       indexName: 'react-course',
     },
     navbar: {
-      title: 'React Course',
+      title: 'React',
       logo: {
         alt: '',
         src: 'img/react.svg',
