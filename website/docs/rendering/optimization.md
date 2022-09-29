@@ -58,6 +58,9 @@ Por lo tanto, una buena estrategia es, no micro-optimizar los reprocesamientos p
 
 Una técnica para comprobar cuantas veces se renderiza un componente es añadiendo un efecto en cada uno de ellos que se ejecute en cada renderización.
 
+Para acabar de entender el funcionamiento del **HOC** `memo` se reduce el ejemplo a una tabla en la que se introducen países mediante un input.
+Todos los componentes hacen uso de un efecto que mostrará por consola cuando son renderizados.
+
 Se añade el efecto al componente `<TableColumnsSelector>` y al componente `<Header>`.
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Table/TableColumnsSelector.jsx#L3-L5
@@ -72,14 +75,6 @@ https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components
 Se observa mediante la consola del navegador como los componentes se renderizan cada vez que hay algún cambio que implique al componente padre `<App>`.
 Para evitar este comportamiento, se envuelven mediante el **HOC** `memo`, consiguiendo que `<TableColumnsSelector>` y `<Header>` sean **memorizados** y solo se **rerenderizarán** cuando sus propiedades hayan sido **actualizadas** desde el componente padre `<App>`.
 
-```jsx reference
-https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Table/TableColumnsSelector.jsx#L31
-```
-<br />
-
-Para acabar de entender el funcionamiento del **HOC** `memo` se reduce el ejemplo a una tabla a la que introducir países mediante un input.
-Todos los componentes hacen uso de un efecto que mostrará por consola cuando son renderizados.
-
 ```bash
 <Header />
 <TableInputButton />
@@ -91,6 +86,11 @@ Todos los componentes hacen uso de un efecto que mostrará por consola cuando so
 <br />
 
 Al aplicar `memo` a los componentes `<Header>`, `<TableColumns>` y `<TableInputButton>` el primero evita volver a renderizarse, pero en el caso de `<TableColumns>` y `<TableInputButton>` estos siguen renderizándose.
+
+```jsx reference
+https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Table/TableColumnsSelector.jsx#L31
+```
+<br />
 
 ```jsx reference
 https://github.com/hondilla/react-course/blob/edge/8.12-rendering/src/components/Header/Header.jsx#L31
