@@ -65,7 +65,7 @@ https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components
 <br />
 
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Table/TableColumnsSelector.jsx#L3-L5
+https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Header/Header.jsx#21-29
 ```
 <br />
 
