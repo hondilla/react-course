@@ -68,7 +68,7 @@ https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components
 <br />
 
 ```jsx reference
-https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Header/Header.jsx#21-29
+https://github.com/hondilla/react-course/blob/edge/8.11-rendering/src/components/Header/Header.jsx#L21-L29
 ```
 <br />
 
