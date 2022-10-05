@@ -143,26 +143,17 @@ class App {
 App --> App : re-rendering
 
 package Memory {
-  class ArrayColumns1 {
-    +Id
-    +Name
-  }
-  class ArrayColumns2 {
-    +Id
-    +Name
-  }
-  class ArrayColumnsN {
-    +Id
-    +Name
-  }
+  class columns1 {}
+  class columns2 {}
+  class columnsN {}
   class setCountry1 {}
   class setCountry2 {}
   class setCountryN {}
 }
 
-App --> ArrayColumns1
-App --> ArrayColumns2
-App --> ArrayColumnsN
+App --> columns1
+App --> columns2
+App --> columnsN
 App --> setCountry1
 App --> setCountry2
 App --> setCountryN
@@ -228,13 +219,10 @@ class App {
 App --> App : re-rendering
 
 package Memory {
-  class ArrayColumns {
-    +Id
-    +Name
-  }
+  class columns {}
 }
 
-App --> ArrayColumns: "  useMemo"
+App --> columns: "  useMemo"
 ```
 </div>
 
@@ -315,13 +303,10 @@ App --> App : re-rendering
 
 package Memory {
   class setCountry {}
-  class ArrayColumns {
-    +Id
-    +Name
-  }
+  class columns {}
 }
 
-App --> ArrayColumns: "  useMemo"
+App --> columns: "  useMemo"
 App --> setCountry : "  useCallback"
 ```
 </div>
